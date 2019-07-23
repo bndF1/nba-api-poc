@@ -12,7 +12,7 @@
     "@angular/platform-browser": "8.1.2",
     "@angular/platform-browser-dynamic": "8.1.2",
     "@angular/router": "8.1.2",
-    "@nebular/eva-icons": "4.0.0-rc.8",
+    "@nebular/eva-icons": "next",
     "@nebular/theme": "4.1.2",
     "@ngxs/store": "3.4.3",
     "bootstrap": "4.3.1",

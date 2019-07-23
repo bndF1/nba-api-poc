@@ -10,9 +10,34 @@ export class MainComponent implements OnInit {
 
   teams;
 
+  tabs: any[] = [
+    {
+      title: 'Players',
+      icon: 'person',
+      route: 'main/players',
+      responsive: true,
+    },
+    {
+      title: 'Games',
+      icon: 'paper-plane-outline',
+      responsive: true,
+      route: 'main/games',
+    },
+    {
+      title: 'Teams',
+      icon: 'flash-outline',
+      responsive: true,
+      route: './main/teams',
+    },
+  ];
+
   constructor(private teamService: TeamsService) { }
 
   ngOnInit() {
     this.teams = this.teamService.getAllTeams();
+
+
+
+
   }
 }
