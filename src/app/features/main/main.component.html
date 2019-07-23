@@ -1,0 +1,8 @@
+<nb-card [size]="'medium'" accent="info">
+	<nb-card-header>List inside nb-card</nb-card-header>
+	<nb-list>
+		<nb-list-item *ngFor="let team of (teams | async)?.data">
+			{{team.city}} - {{team.full_name}} - {{team.conference}}
+		</nb-list-item>
+	</nb-list>
+</nb-card>
