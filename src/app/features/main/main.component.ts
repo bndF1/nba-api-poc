@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { TeamsService } from '../../core';
+
 
 @Component({
   selector: 'app-main',
@@ -7,37 +7,29 @@ import { TeamsService } from '../../core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-
-  teams;
-
   tabs: any[] = [
     {
       title: 'Players',
       icon: 'person',
-      route: 'main/players',
+      route: ['players'],
       responsive: true,
     },
     {
       title: 'Games',
       icon: 'paper-plane-outline',
       responsive: true,
-      route: 'main/games',
+      route: ['games'],
     },
     {
       title: 'Teams',
       icon: 'flash-outline',
       responsive: true,
-      route: './main/teams',
+      route: ['teams'],
     },
   ];
 
-  constructor(private teamService: TeamsService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.teams = this.teamService.getAllTeams();
-
-
-
-
   }
 }

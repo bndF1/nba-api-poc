@@ -7,7 +7,6 @@ const routes: Routes = [
     path: 'main',
     component: MainComponent,
     children: [
-      { path: '', loadChildren: () => import('./games/games.module').then(m => m.GamesModule) },
       { path: 'stats', loadChildren: () => import('./stats/stats.module').then(m => m.StatsModule) },
       { path: 'teams', loadChildren: () => import('./teams/teams.module').then(m => m.TeamsModule) },
       { path: 'games', loadChildren: () => import('./games/games.module').then(m => m.GamesModule) },

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NbButtonModule, NbCardModule, NbDialogModule, NbListModule, NbRouteTabsetModule  } from '@nebular/theme';
+import { NbButtonModule, NbCardModule, NbDialogModule, NbListModule, NbRouteTabsetModule, NbUserModule  } from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
@@ -12,7 +12,8 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbDialogModule.forRoot(),
     NbListModule,
     NbRouteTabsetModule,
-    NbEvaIconsModule
+    NbEvaIconsModule,
+    NbUserModule
   ],
   exports: [
     NbCardModule,
@@ -20,7 +21,8 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbDialogModule,
     NbListModule,
     NbRouteTabsetModule,
-    NbEvaIconsModule
+    NbEvaIconsModule,
+    NbUserModule
   ],
   declarations: []
 })

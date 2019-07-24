@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FeatureRoutingModule} from '../feature-routing.module';
 import { CoreModule } from '../../core/core.module';
+import { StatsModule } from '../stats/stats.module';
 
 
 
@@ -14,7 +15,8 @@ import { CoreModule } from '../../core/core.module';
     CommonModule,
     NebularModule,
     FeatureRoutingModule,
-    CoreModule
+    CoreModule,
+    StatsModule
   ],
   exports: [
     MainComponent

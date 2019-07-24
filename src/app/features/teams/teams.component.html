@@ -1,3 +1,5 @@
-<p>
-teams works!
-</p>
+<nb-list>
+	<nb-list-item *ngFor="let team of (teams | async)?.data">
+		{{team.city}} - {{team.full_name}} - {{team.conference}}
+	</nb-list-item>
+</nb-list>
