@@ -1,7 +1,16 @@
-<nb-list>
-	<nb-list-item *ngFor="let player of (players | async)?.data">
-		<nb-user size="medium" name="{{player.first_name}} {{player.last_name}}" title="Position: {{player.position}}"
-			picture="getPlayerImg(player.first_name,player.last_name) | async">
-		</nb-user>
+<nb-list *ngIf="players$">
+	<nb-list-item *ngFor="let player of (players$ | async)">
+		<nb-user size="medium" name="{{player.first_name}} {{player.last_name}}" title="Position: {{player.position}}" [picture]="player.picture">
+		</nb-user> 
 	</nb-list-item>
 </nb-list>
+
+
+<!-- <nb-list *ngIf="!players$">
+	<nb-list-item *ngFor="let player of (players$ | async)">
+		<nb-user size="medium" name="{{player.first_name}} {{player.last_name}}" title="Position: {{player.position}}" [picture]="player.picture">
+		</nb-user> 
+	</nb-list-item>
+</nb-list> -->
+
+<app-ghosts-players [ghosts]="ghosts"></app-ghosts-players>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NbThemeModule, NbLayoutModule, NbContextMenuModule, NbActionsModule, NbMenuModule } from '@nebular/theme';
 import { NbButtonModule, NbCardModule, NbDialogModule } from '@nebular/theme';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 
 
@@ -12,7 +13,8 @@ import { NbButtonModule, NbCardModule, NbDialogModule } from '@nebular/theme';
     NbLayoutModule,
     NbActionsModule,
     NbMenuModule.forRoot(),
-    NbContextMenuModule
+    NbContextMenuModule,
+    NgxSkeletonLoaderModule
   ],
   exports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { NbButtonModule, NbCardModule, NbDialogModule } from '@nebular/theme';
     NbLayoutModule,
     NbActionsModule,
     NbMenuModule,
-    NbContextMenuModule
+    NbContextMenuModule,
+    NgxSkeletonLoaderModule
   ],
   declarations: []
 })
