@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlayersComponent } from './players.component';
 import { RouterModule, Routes } from '@angular/router';
-import { NebularModule } from '../../shared/';
-import { SharedModule } from '../../shared/';
+import { SharedModule, NebularModule } from '../../shared/';
+import { SharedFeaturesModule } from '../shared/shared-features.module';
 import { GhostsPlayersComponent } from './ghosts-players/ghosts-players.component';
 
 const routes: Routes = [
@@ -16,9 +16,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     NebularModule,
-    SharedModule,
-    RouterModule.forChild(routes)
-  ], 
+    RouterModule.forChild(routes),
+    SharedFeaturesModule
+  ],
   exports: [
     PlayersComponent
   ],

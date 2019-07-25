@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayersService } from '../../core';
-import { withLatestFrom, concatMap, mergeMap, map, flatMap, tap, concatAll, merge, mapTo, concatMapTo, switchMap, toArray } from 'rxjs/operators';
+import { map, flatMap, tap, toArray } from 'rxjs/operators';
 import { combineLatest, of, concat, from } from 'rxjs';
 
 
