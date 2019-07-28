@@ -1,7 +1,9 @@
-<nb-list *ngIf="players$">
-	<nb-list-item *ngFor="let player of (players$ | async)">
-		<nb-user class="" size="giant" name="{{player.first_name}} {{player.last_name}}" title="{{player.position}} at {{player.team?.full_name}}" [picture]="player.picture">
-		</nb-user> 
+<nb-list *ngIf="players$" nbInfiniteList listenWindowScroll [threshold]="500" (bottomThreshold)="loadNext()">
+	<nb-list-item *ngFor="let player of (players$ | async); trackBy: trackByFn;">
+		<nb-user class="" size="giant" name="{{player.first_name}} {{player.last_name}}" title="{{player.position}} at {{player.team?.full_name}}"
+		 [picture]="player.picture">
+		</nb-user>
 	</nb-list-item>
 </nb-list>
+
 <app-ghosts-players [ghosts]="ghosts"></app-ghosts-players>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Constants } from '../constants';
 import { WindowRefService } from '../window/window-ref.service';
@@ -11,6 +11,7 @@ export class PlayersService {
   private PLAYER_IMG_URL = 'https://nba-players.herokuapp.com/players';
 
   private _window: Window;
+  private itemsPerPage = 25;
 
   PLAYERS = '/players';
   constructor(private httpClient: HttpClient, private windowRefService: WindowRefService) {
@@ -29,4 +30,12 @@ export class PlayersService {
     return this._window.URL.createObjectURL(image);
   }
 
+  // ?page=0&per_page=25
+  public getPlayers(page): Observable<any> {
+    const params = new HttpParams()
+      .set('page', page)
+      .set('per_page', this.itemsPerPage.toString());
+    return this.httpClient.get(`${Constants.BASE_API_URL + this.PLAYERS}`, { params });
+  }
+  
 }
