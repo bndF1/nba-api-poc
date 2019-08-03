@@ -1,7 +1,10 @@
-<div *ngFor="let player of ghosts" class="fb-item">
+<div class="fb-item">
   <div class="first-section-wrapper">
     <div class="gravatar">
-      <ngx-skeleton-loader appearance="circle" [theme]="{ width: '60px', height: '60px' }">
+      <ngx-skeleton-loader
+        appearance="circle"
+        [theme]="{ width: '60px', height: '60px' }"
+      >
       </ngx-skeleton-loader>
     </div>
     <div class="gravatar-title">
@@ -17,7 +20,7 @@
       </div>
       <div>
         <ngx-skeleton-loader
-          [theme]="{     
+          [theme]="{
             width: '170px',
             'border-radius': '0',
             height: '15px'

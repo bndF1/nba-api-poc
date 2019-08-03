@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-ghosts-players',
@@ -6,6 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./ghosts-players.component.scss']
 })
 export class GhostsPlayersComponent {
-  @Input() ghosts: any[];
   constructor() {}
 }

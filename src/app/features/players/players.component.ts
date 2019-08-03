@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { flatMap, map, tap, toArray } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { PlayersService } from '../../core';
 
 @Component({
@@ -18,13 +18,7 @@ export class PlayersComponent implements OnInit {
 
   ngOnInit() {
     this.ghosts = new Array(25);
-  }
-
-  getPlayerImg(player: any) {
-    return this.playersService.getPlayerImage(
-      player.first_name,
-      player.last_name
-    );
+    this.loadNext();
   }
 
   trackByFn(index, item) {
@@ -37,9 +31,9 @@ export class PlayersComponent implements OnInit {
     }
 
     this.loading = true;
-    this.ghosts = new Array(this.pageSize);
+    this.ghosts = new Array(25);
 
-    this.players$ = this.getPlayersByPage(this.currentPage).pipe(
+    this.players$ = this.playersService.getPlayersByPage(this.currentPage).pipe(
       map(result => {
         this.players.push(...result);
         return this.players;
@@ -49,22 +43,6 @@ export class PlayersComponent implements OnInit {
         this.currentPage++;
         this.ghosts = [];
       })
-    );
-  }
-
-  getPlayersByPage(page) {
-    return this.playersService.getPlayers(page).pipe(
-      flatMap((player: { data }) => player.data),
-      flatMap((data: { picture }) => {
-        const img$ = this.getPlayerImg(data);
-        return img$.pipe(
-          map(res => {
-            data.picture = res;
-            return data;
-          })
-        );
-      }),
-      toArray()
     );
   }
 }

@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { flatMap, map, toArray } from 'rxjs/operators';
 import { Constants } from '../constants';
 import { WindowRefService } from '../window/window-ref.service';
-import { map } from 'rxjs/operators';
 
 @Injectable()
 export class PlayersService {
@@ -14,7 +14,10 @@ export class PlayersService {
   private itemsPerPage = 25;
 
   PLAYERS = '/players';
-  constructor(private httpClient: HttpClient, private windowRefService: WindowRefService) {
+  constructor(
+    private httpClient: HttpClient,
+    private windowRefService: WindowRefService
+  ) {
     this._window = this.windowRefService.nativeWindow;
   }
 
@@ -23,7 +26,12 @@ export class PlayersService {
   }
 
   public getPlayerImage(firstName, lastName): Observable<any> {
-    return this.httpClient.get(`${this.PLAYER_IMG_URL}` + '/' + `${lastName}` + '/' + `${firstName}`, { responseType: 'blob' }).pipe(map(x => this.createImageFromBlob(x)));
+    return this.httpClient
+      .get(
+        `${this.PLAYER_IMG_URL}` + '/' + `${lastName}` + '/' + `${firstName}`,
+        { responseType: 'blob' }
+      )
+      .pipe(map(x => this.createImageFromBlob(x)));
   }
 
   private createImageFromBlob(image: Blob) {
@@ -31,11 +39,32 @@ export class PlayersService {
   }
 
   // ?page=0&per_page=25
-  public getPlayers(page): Observable<any> {
+  private getPlayers(page): Observable<any> {
     const params = new HttpParams()
       .set('page', page)
       .set('per_page', this.itemsPerPage.toString());
-    return this.httpClient.get(`${Constants.BASE_API_URL + this.PLAYERS}`, { params });
+    return this.httpClient.get(`${Constants.BASE_API_URL + this.PLAYERS}`, {
+      params
+    });
   }
-  
+
+  public getPlayersByPage(page) {
+    return this.getPlayers(page).pipe(
+      flatMap((player: { data }) => player.data),
+      flatMap((data: { picture }) => {
+        const img$ = this.getPlayerImg(data);
+        return img$.pipe(
+          map(res => {
+            data.picture = res;
+            return data;
+          })
+        );
+      }),
+      toArray()
+    );
+  }
+
+  private getPlayerImg(player: any) {
+    return this.getPlayerImage(player.first_name, player.last_name);
+  }
 }
