@@ -1,0 +1,17 @@
+nb-tabset {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+nb-card-body {
+  overflow: hidden;
+}
+
+.infinite-cards {
+  nb-card {
+    &.own-scroll {
+      height: 50vh;
+    }
+  }
+}

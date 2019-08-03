@@ -6,8 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./ghosts-players.component.scss']
 })
 export class GhostsPlayersComponent {
-
   @Input() ghosts: any[];
-  constructor() { }
-
+  constructor() {}
 }

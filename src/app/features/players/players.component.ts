@@ -18,7 +18,6 @@ export class PlayersComponent implements OnInit {
 
   ngOnInit() {
     this.ghosts = new Array(25);
-    // this.players$ = this.getPlayersByPage(this.currentPage);
   }
 
   getPlayerImg(player: any) {
@@ -48,6 +47,7 @@ export class PlayersComponent implements OnInit {
       tap(() => {
         this.loading = false;
         this.currentPage++;
+        this.ghosts = [];
       })
     );
   }
@@ -64,8 +64,7 @@ export class PlayersComponent implements OnInit {
           })
         );
       }),
-      toArray(),
-      tap(() => (this.ghosts = []))
+      toArray()
     );
   }
 }
