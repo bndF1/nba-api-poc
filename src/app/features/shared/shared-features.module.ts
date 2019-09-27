@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @NgModule({
@@ -7,7 +7,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     CommonModule,
     NgxSkeletonLoaderModule
   ],
-  exports:  [
+  exports: [
     NgxSkeletonLoaderModule
   ],
   declarations: []

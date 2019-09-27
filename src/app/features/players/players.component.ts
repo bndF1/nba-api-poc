@@ -14,7 +14,7 @@ export class PlayersComponent implements OnInit {
   currentPage = 0;
   loading = false;
   players = new Array();
-  constructor(private playersService: PlayersService) {}
+  constructor(private playersService: PlayersService) { }
 
   ngOnInit() {
     this.ghosts = new Array(25);

@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -13,6 +13,6 @@ export class TeamsService {
 
 
   public getAllTeams(): Observable<any> {
-    return this.httpClient.get(`${this.BASE_API_URL+ this.TEAMS}`);
+    return this.httpClient.get(`${this.BASE_API_URL + this.TEAMS}`);
   }
 }

@@ -1,7 +1,6 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NbThemeModule, NbLayoutModule, NbContextMenuModule, NbActionsModule, NbMenuModule } from '@nebular/theme';
-import { NbButtonModule, NbCardModule, NbDialogModule } from '@nebular/theme';
+import { NgModule } from '@angular/core';
+import { NbActionsModule, NbContextMenuModule, NbLayoutModule, NbMenuModule, NbThemeModule } from '@nebular/theme';
 
 @NgModule({
   imports: [
@@ -10,7 +9,7 @@ import { NbButtonModule, NbCardModule, NbDialogModule } from '@nebular/theme';
     NbLayoutModule,
     NbActionsModule,
     NbMenuModule.forRoot(),
-    NbContextMenuModule    
+    NbContextMenuModule
   ],
   exports: [
     CommonModule,

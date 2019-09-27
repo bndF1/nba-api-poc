@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StatsComponent } from './stats.component';
+import { NgModule } from '@angular/core';
 import { NebularModule } from '../../shared';
+import { StatsComponent } from './stats.component';
 
 @NgModule({
   imports: [

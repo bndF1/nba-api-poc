@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TeamsComponent } from './teams.component';
-import { NebularModule } from '../../shared/';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NebularModule } from '../../shared/';
+import { TeamsComponent } from './teams.component';
 
 const routes: Routes = [
   {
@@ -16,7 +16,7 @@ const routes: Routes = [
     NebularModule,
     RouterModule.forChild(routes)
   ],
-  exports:[
+  exports: [
     TeamsComponent
   ],
   declarations: [TeamsComponent]

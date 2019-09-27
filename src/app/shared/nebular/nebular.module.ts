@@ -1,11 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NbButtonModule, NbCardModule, NbDialogModule, NbListModule, NbRouteTabsetModule, NbUserModule, NbBadgeModule  } from '@nebular/theme';
-
+import {
+  NbBadgeModule,
+  NbButtonModule,
+  NbCardModule,
+  NbDialogModule,
+  NbListModule,
+  NbRouteTabsetModule,
+  NbUserModule
+  } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-
+import { NgModule } from '@angular/core';
 
 @NgModule({
+
   imports: [
     NbCardModule,
     NbButtonModule,

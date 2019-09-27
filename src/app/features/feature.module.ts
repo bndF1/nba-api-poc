@@ -1,15 +1,15 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FeatureRoutingModule } from './feature-routing.module';
 import { MainModule } from './main/main.module';
-import { FeatureRoutingModule} from './feature-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FeatureRoutingModule
   ],
-  exports :[
-    MainModule  
+  exports: [
+    MainModule
   ],
   declarations: []
 })

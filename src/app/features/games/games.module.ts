@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GamesComponent } from './games.component';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NebularModule } from '../../shared/';
+import { GamesComponent } from './games.component';
 
 const routes: Routes = [{
-    path: '',
-    component: GamesComponent
+  path: '',
+  component: GamesComponent
 }];
 
 @NgModule({

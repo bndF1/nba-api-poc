@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TeamsService } from './teams/teams.service';
+import { NgModule } from '@angular/core';
 import { ApiInterceptorService } from './api-interceptor.service';
 import { PlayersService } from './players/players.service';
+import { TeamsService } from './teams/teams.service';
 import { WindowRefService } from './window/window-ref.service';
 
 
@@ -13,7 +13,7 @@ import { WindowRefService } from './window/window-ref.service';
     HttpClientModule
   ],
   declarations: [],
-   providers: [
+  providers: [
     TeamsService,
     {
       provide: HTTP_INTERCEPTORS,
