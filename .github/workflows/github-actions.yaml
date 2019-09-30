@@ -20,3 +20,11 @@ jobs:
       run: npm run build -- --prod
     - name: Test
       run: npm test -- --configuration=ci
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1.0.2
+      with:
+        token: ${{secrets.CODECOV_TOKEN}}
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+
