@@ -12,7 +12,8 @@ module.exports = {
     '@state/(.*)': '<rootDir>/src/app/state/$1'
   },
   transformIgnorePatterns: ['node_modules/(?!(jest-test))'],
-
+  collectCoverage: true,
+  coverageReporters: ['json-summary', 'text', 'lcov'],
   globals: {
     "ts-jest": {
       "tsConfig": "<rootDir>/tsconfig.spec.json",
