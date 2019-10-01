@@ -29,12 +29,13 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "jest",
+    "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "test:watch": "jest --watch"
+    "test:cov": "ng test --coverage"
   },
   "devDependencies": {
+    "@angular-builders/jest": "^8.2.0",
     "@angular-devkit/build-angular": "^0.801.2",
     "@angular/cli": "~8.1.0",
     "@angular/compiler-cli": "~8.1.0",

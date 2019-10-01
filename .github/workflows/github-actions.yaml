@@ -19,10 +19,13 @@ jobs:
     - name: Build
       run: npm run build -- --prod
     - name: Test
-      run: npm test -- --configuration=ci
+      run: npm run test:cov -- --configuration=ci
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1.0.2
       with:
         token: ${{secrets.CODECOV_TOKEN}}
+         file: ./coverage.xml #optional
+         flags: unittests #optional
+         name: codecov-umbrella #optional
 
 

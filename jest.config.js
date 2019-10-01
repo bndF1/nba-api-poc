@@ -1,27 +1,40 @@
-// https://github.com/thymikee/jest-preset-angular#brief-explanation-of-config
 module.exports = {
-  preset: 'jest-preset-angular',
-  roots: ['src'],
-  setupFilesAfterEnv: ['<rootDir>/src/setup-jest.ts'],
-  moduleNameMapper: {
-    '@app/(.*)': '<rootDir>/src/app/$1',
-    '@assets/(.*)': '<rootDir>/src/assets/$1',
-    '@core/(.*)': '<rootDir>/src/app/core/$1',
-    '@env': '<rootDir>/src/environments/environment',
-    '@src/(.*)': '<rootDir>/src/src/$1',
-    '@state/(.*)': '<rootDir>/src/app/state/$1'
-  },
-  transformIgnorePatterns: ['node_modules/(?!(jest-test))'],
-  collectCoverage: true,
-  coverageReporters: ['json-summary', 'text', 'lcov'],
   globals: {
-    "ts-jest": {
-      "tsConfig": "<rootDir>/tsconfig.spec.json",
-      "stringifyContentPathRegex": "\\.html$",
-      "astTransformers": [
-        "<rootDir>/node_modules/jest-preset-angular/InlineHtmlStripStylesTransformer"
+    'ts-jest': {
+      tsConfig: './tsconfig.spec.json',
+      stringifyContentPathRegex: '\\.html$',
+      astTransformers: [
+        require.resolve('jest-preset-angular/InlineHtmlStripStylesTransformer')
       ]
     }
-  }
-
+  },
+  setupFilesAfterEnv: [
+    '<rootDir>/node_modules/@angular-builders/jest/dist/jest-config/setup.js'
+  ],
+  transform: {
+    '^.+\\.(ts|js|html)$': 'ts-jest'
+  },
+  testMatch: [
+    '**/__tests__/**/*.+(ts|js)?(x)',
+    '**/+(*.)+(spec|test).+(ts|js)?(x)'
+  ],
+  testEnvironment: 'jest-environment-jsdom-thirteen',
+  moduleNameMapper: {
+    '@core/(.*)': '<rootDir>/src/app/core/$1',
+    '@shared/(.*)': '<rootDir>/src/app/shared/$1',
+    '@features/(.*)': '<rootDir>/src/app/features/$1',
+  },
+  transformIgnorePatterns: ['node_modules/(?!@ngrx)'],
+  collectCoverageFrom: [
+    'src/app/**/*.ts',
+    '!src/app/**/*.module.ts',
+    '!src/app/**/*.array.ts',
+    '!src/app/fragmentTypes.ts'
+  ],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/', 'src/app/*.{js}'],
+  snapshotSerializers: [
+    'jest-preset-angular/AngularSnapshotSerializer.js',
+    'jest-preset-angular/HTMLCommentSerializer.js'
+  ]
 };
