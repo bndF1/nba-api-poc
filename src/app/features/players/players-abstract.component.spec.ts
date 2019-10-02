@@ -5,11 +5,11 @@ import { PlayersComponent } from './players.component';
 
 describe('PlayersAbstractComponent', () => {
   let component: Players;
-  let fixture: ComponentFixture<Players>;
+  let fixture: ComponentFixture<PlayersComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [Players]
+      declarations: [PlayersComponent]
     })
       .compileComponents();
   }));
