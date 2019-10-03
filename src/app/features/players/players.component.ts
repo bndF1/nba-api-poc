@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PlayersService } from '../../core';
 import { Players } from './players.abstract';
 
 @Component({
@@ -7,5 +8,7 @@ import { Players } from './players.abstract';
   styleUrls: ['./players.component.scss']
 })
 export class PlayersComponent extends Players {
-
+  constructor(playersService: PlayersService) {
+    super(playersService);
+  }
 }
