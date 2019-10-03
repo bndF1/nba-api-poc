@@ -1,0 +1,6 @@
+<!-- <ng-template #rt let-r="result" let-t="term">
+  <img [src]="r.picture" class="mr-1" style="width: 16px">
+  <ngb-highlight [result]="r.full_name" [term]="t"></ngb-highlight>
+</ng-template> -->
+
+<input id="typeahead-template" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" />

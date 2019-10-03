@@ -29,16 +29,17 @@ export abstract class Players implements OnInit {
     this.loading = true;
     this.ghosts = new Array(25);
 
-    this.players$ = this.playersService.getPlayersByPage(this.currentPage).pipe(
-      map(result => {
-        this.players.push(...result);
-        return this.players;
-      }),
-      tap(() => {
-        this.loading = false;
-        this.currentPage++;
-        this.ghosts = [];
-      })
-    );
+    this.players$ = this.playersService.getPlayersByPageWithImg(this.currentPage)
+      .pipe(
+        map(result => {
+          this.players.push(...result);
+          return this.players;
+        }),
+        tap(() => {
+          this.loading = false;
+          this.currentPage++;
+          this.ghosts = [];
+        })
+      );
   }
 }

@@ -1,6 +1,14 @@
 import { CommonModule } from '@angular/common';
+import {
+  NbActionsModule,
+  NbContextMenuModule,
+  NbLayoutModule,
+  NbMenuModule,
+  NbSearchModule,
+  NbThemeModule
+  } from '@nebular/theme';
 import { NgModule } from '@angular/core';
-import { NbActionsModule, NbContextMenuModule, NbLayoutModule, NbMenuModule, NbThemeModule } from '@nebular/theme';
+import { SearchModule } from './search/search.module';
 
 @NgModule({
   imports: [
@@ -9,7 +17,9 @@ import { NbActionsModule, NbContextMenuModule, NbLayoutModule, NbMenuModule, NbT
     NbLayoutModule,
     NbActionsModule,
     NbMenuModule.forRoot(),
-    NbContextMenuModule
+    NbContextMenuModule,
+    NbSearchModule,
+    SearchModule
   ],
   exports: [
     CommonModule,
@@ -17,7 +27,9 @@ import { NbActionsModule, NbContextMenuModule, NbLayoutModule, NbMenuModule, NbT
     NbLayoutModule,
     NbActionsModule,
     NbMenuModule,
-    NbContextMenuModule
+    NbContextMenuModule,
+    NbSearchModule,
+    SearchModule
   ],
   declarations: []
 })

@@ -20,7 +20,8 @@ import { NgModule } from '@angular/core';
     NbRouteTabsetModule,
     NbEvaIconsModule,
     NbUserModule,
-    NbBadgeModule
+    NbBadgeModule,
+
   ],
   exports: [
     NbCardModule,
@@ -30,7 +31,8 @@ import { NgModule } from '@angular/core';
     NbRouteTabsetModule,
     NbEvaIconsModule,
     NbUserModule,
-    NbBadgeModule
+    NbBadgeModule,
+
   ],
   declarations: []
 })
