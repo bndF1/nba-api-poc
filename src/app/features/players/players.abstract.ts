@@ -1,6 +1,6 @@
 import { map, tap } from 'rxjs/operators';
 import { OnInit } from '@angular/core';
-import { PlayersService } from 'src/app/core';
+import { PlayersService } from '@nba/core/players/players.service';
 
 export abstract class Players implements OnInit {
 
