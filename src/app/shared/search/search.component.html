@@ -1,6 +1,11 @@
-<!-- <ng-template #rt let-r="result" let-t="term">
-  <img [src]="r.picture" class="mr-1" style="width: 16px">
-  <ngb-highlight [result]="r.full_name" [term]="t"></ngb-highlight>
+<!-- <ng-template #resultTemplate let-player="result" let-searchTerm="term">
+  <nb-user size="small" name="{{ player.first_name }} {{ player.last_name }}"
+    title="{{ player.position }} at {{ player.team?.full_name }}" [picture]="player.picture">
+  </nb-user>
 </ng-template> -->
 
-<input id="typeahead-template" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" />
+<div class="form-group">
+  <input id="search" type="text" name="global-search" class="form-control" [(ngModel)]="model.id"
+    [ngbTypeahead]="search" [resultFormatter]="resultFormatListValue" [inputFormatter]="inputFormatListValue"
+    #instance="ngbTypeahead" />
+</div>

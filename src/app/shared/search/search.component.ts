@@ -1,7 +1,13 @@
+import {
+  catchError,
+  debounceTime,
+  distinctUntilChanged,
+  switchMap
+  } from 'rxjs/operators';
 import { Component } from '@angular/core';
-import { debounceTime, map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
-import { PlayersService } from 'src/app/core';
+import { NbToastrService } from '@nebular/theme';
+import { Observable, of } from 'rxjs';
+import { PlayersService } from '@nba/core/players/players.service';
 
 
 @Component({
@@ -11,23 +17,26 @@ import { PlayersService } from 'src/app/core';
 })
 export class SearchComponent {
 
-  constructor(public playerService: PlayersService) {
+  constructor(private playerService: PlayersService, private toastrService: NbToastrService) {
 
   }
 
-  public model: Player;
+  public model: Player = {} as Player;
 
-  result = [];
-
-  search = (text$: Observable<string>) =>
-    text$.pipe(
+  search = (text$: Observable<string>) => {
+    return text$.pipe(
       debounceTime(200),
-      map((term: string) => term === '' ? []
-        : this.playerService.getPlayersByName(term).pipe(
-          map((players: Player[]) => this.result = players)
-        )
-        // : statesWithFlags.filter(v => v.name.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
-      ))
+      distinctUntilChanged(),
+      switchMap((searchText) => this.playerService.getPlayersByName(searchText)),
+      catchError((err) => of(this.toastrService.warning(`An error occurred ${err}`)))
+    );
+  }
 
-  // formatter = (x: { name: string }) => x.name;
+  resultFormatListValue({ first_name, last_name }: Player) {
+    return first_name + ' ' + last_name;
+  }
+
+  inputFormatListValue({ first_name, last_name }: Player) {
+    return first_name + ' ' + last_name;
+  }
 }
