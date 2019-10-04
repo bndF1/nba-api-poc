@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { GhostsPlayersComponent } from './ghosts-players/ghosts-players.component';
-import { NebularModule } from '../../shared/';
+import { NebularModule } from '@nba/shared/nebular/nebular.module';
 import { NgModule } from '@angular/core';
 import { PlayersComponent } from './players.component';
 import { RouterModule, Routes } from '@angular/router';
-import { SharedFeaturesModule } from '../shared/shared-features.module';
+import { SharedFeaturesModule } from '@nba/features/shared/shared-features.module';
 
 const routes: Routes = [
   {
