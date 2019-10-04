@@ -21,7 +21,7 @@ export class SearchComponent {
 
   }
 
-  public model: Player = {} as Player;
+  public model = {} as Player;
 
   search = (text$: Observable<string>) => {
     return text$.pipe(
