@@ -1,42 +1,12 @@
-import {
-  catchError,
-  debounceTime,
-  distinctUntilChanged,
-  switchMap
-  } from 'rxjs/operators';
-import { Component } from '@angular/core';
-import { NbToastrService } from '@nebular/theme';
-import { Observable, of } from 'rxjs';
-import { PlayersService } from '@nba/core/players/players.service';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Search } from './search.abstract';
 
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SearchComponent {
+export class SearchComponent extends Search {
 
-  constructor(private playerService: PlayersService, private toastrService: NbToastrService) {
-
-  }
-
-  public model = {} as Player;
-
-  search = (text$: Observable<string>) => {
-    return text$.pipe(
-      debounceTime(200),
-      distinctUntilChanged(),
-      switchMap((searchText) => this.playerService.getPlayersByName(searchText)),
-      catchError((err) => of(this.toastrService.warning(`An error occurred ${err}`)))
-    );
-  }
-
-  resultFormatListValue({ first_name, last_name }: Player) {
-    return first_name + ' ' + last_name;
-  }
-
-  inputFormatListValue({ first_name, last_name }: Player) {
-    return first_name + ' ' + last_name;
-  }
 }

@@ -89,9 +89,6 @@ export class PlayersService {
     return this._window.URL.createObjectURL(image);
   }
 
-
-
-
   private buildParams(page?: any) {
     return new HttpParams()
       .set('page', page)

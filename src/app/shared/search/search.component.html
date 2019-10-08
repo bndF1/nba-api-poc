@@ -5,7 +5,7 @@
 </ng-template> -->
 
 <div class="form-group">
-  <input id="search" type="text" name="global-search" class="form-control" [(ngModel)]="model.id"
+  <input id="search" type="text" name="global-search" class="form-control" [(ngModel)]="playerAndTeamModel.id"
     [ngbTypeahead]="search" [resultFormatter]="resultFormatListValue" [inputFormatter]="inputFormatListValue"
     #instance="ngbTypeahead" />
 </div>

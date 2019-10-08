@@ -34,3 +34,6 @@ declare interface ApiPlayersResponse<T> {
 }
 
 
+type PlayersAndTeams = Player & Team;
+
+
