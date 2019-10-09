@@ -1,9 +1,3 @@
-<!-- <ng-template #resultTemplate let-player="result" let-searchTerm="term">
-  <nb-user size="small" name="{{ player.first_name }} {{ player.last_name }}"
-    title="{{ player.position }} at {{ player.team?.full_name }}" [picture]="player.picture">
-  </nb-user>
-</ng-template> -->
-
 <div class="form-group">
   <input id="search" type="text" name="global-search" class="form-control" [(ngModel)]="playerAndTeamModel.id"
     [ngbTypeahead]="search" [resultFormatter]="resultFormatListValue" [inputFormatter]="inputFormatListValue"
