@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NbLayoutRulerService, NbLayoutScrollService } from '@nebular/theme';
-import { CoreModule } from '../../core';
-import { NebularModule } from '../../shared';
-import { SharedFeaturesModule } from '../shared/shared-features.module';
+import { CoreModule } from '@nba/core/core.module';
 import { GhostsPlayersComponent } from './ghosts-players/ghosts-players.component';
+import { NbLayoutRulerService, NbLayoutScrollService } from '@nebular/theme';
+import { NebularModule } from '../../shared';
 import { PlayersComponent } from './players.component';
+import { SharedFeaturesModule } from '../shared/shared-features.module';
 
 
 describe('PlayersComponent', () => {
