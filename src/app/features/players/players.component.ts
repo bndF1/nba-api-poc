@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Players } from './players.abstract';
-import { PlayersService } from '../../core';
+import { PlayersService } from '@nba/core/players/players.service';
 
 @Component({
   selector: 'app-players',
