@@ -30,7 +30,7 @@ Other goals which I can classify as "improving technical knowloge" are:
 -  How to use [Typescript conditional types](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html).
 -  Jest + Cypress Testing.
 -  Working with [CI/CD provided by github](https://github.com/features/actions).
--  Advanced usage of RxJS operators such could be merging, flatenning, maping, etc.. due to the existence of nested requests (*ie:* When listing players the images are caming for a different Api).
+-  Show the usage of Higher-Order RxJs Mapping Operators: switchMap, mergeMap and concatMap due to the existence of nested requests (*ie:* When listing players the images are caming from a different Api) and autocomplete / typeahead.
 -  Deep dive in an [interesting component library Nebular](https://akveo.github.io/nebular/).
 
 And of course, having fun with this little project! :rocket: :smile:
