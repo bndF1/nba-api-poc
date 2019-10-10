@@ -17,7 +17,7 @@ Angular 8 and Nebular through RapidApi, built with :heart:
 
 This is a simple project in which I want to show how to apply some of the best practises in order to develop a performant webapp.
 
-The final goals of the projec are:
+The final goals of the project are:
 
 - [ ] Show players, teams and games stats.
 - [ ] Autocomplete allowing to search by player name or surname (endpoint provided by the API) and also allowing to search by team (city or team name)*
