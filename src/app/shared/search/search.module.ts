@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NbToastrModule, NbUserModule } from '@nebular/theme';
+import { NbIconModule, NbToastrModule, NbUserModule } from '@nebular/theme';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { SearchComponent } from './search.component';
@@ -15,7 +15,8 @@ import { SearchComponent } from './search.component';
     FormsModule,
     NgbModule,
     NbToastrModule.forRoot(),
-    NbUserModule
+    NbUserModule,
+    NbIconModule
   ],
   exports: [
     SearchComponent

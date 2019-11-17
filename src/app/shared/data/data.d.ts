@@ -36,4 +36,8 @@ declare interface ApiPlayersResponse<T> {
 
 type PlayersAndTeams = Player & Team;
 
+declare interface PlayerAndTeam extends PlayersAndTeams {
+    name: string
+}
+
 
