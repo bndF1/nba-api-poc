@@ -1,0 +1,5 @@
+<div class="ml-3">
+  <input id="search" type="text" name="global-search" class="form-control" [(ngModel)]="playerAndTeamModel.id"
+    [ngbTypeahead]="search" [resultFormatter]="resultFormatListValue" [inputFormatter]="inputFormatListValue" />
+  <nb-icon class="search-outline" icon="search-outline" pack="eva"></nb-icon>
+</div>
