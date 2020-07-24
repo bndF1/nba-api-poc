@@ -20,9 +20,9 @@ module.exports = {
   ],
   testEnvironment: 'jest-environment-jsdom-thirteen',
   moduleNameMapper: {
-    '@core/(.*)': '<rootDir>/src/app/core/$1',
-    '@shared/(.*)': '<rootDir>/src/app/shared/$1',
-    '@features/(.*)': '<rootDir>/src/app/features/$1',
+    '@nba/core/(.*)': '<rootDir>/src/app/core/$1',
+    '@nba/shared/(.*)': '<rootDir>/src/app/shared/$1',
+    '@nba/features/(.*)': '<rootDir>/src/app/features/$1',
   },
   transformIgnorePatterns: ['node_modules/(?!@ngrx)'],
   collectCoverageFrom: [
